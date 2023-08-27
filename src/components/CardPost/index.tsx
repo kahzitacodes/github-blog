@@ -7,6 +7,8 @@ import { ptBR } from 'date-fns/locale';
 export function Card({ card }: ICard) {
   const navigate = useNavigate();
 
+  const text = card.body.substring(0, 175).replace(/[\*\#]+/g, ' ');
+
   return (
     <CardContainer onClick={() => navigate(`/post/${card.number}`)}>
 
@@ -18,7 +20,7 @@ export function Card({ card }: ICard) {
 
         <h1>{card.title}</h1>
       </CardHeadline>
-      <p>{card.body.substring(0, 175).concat('...')}</p>
+      <p>{text.concat('...')}</p>
     </CardContainer>
   );
 }

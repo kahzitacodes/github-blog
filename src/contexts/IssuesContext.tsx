@@ -34,7 +34,7 @@ export function IssueContextProvider({ children }: IIssueContextProvider) {
 
     const response = await api.get('/search/issues', {
       params: {
-        q: `${paramsQuery}repo:kahzitacodes/github-blog`
+        q: `${paramsQuery} repo:kahzitacodes/github-blog`
       }
     });
 
